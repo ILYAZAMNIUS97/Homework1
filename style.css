@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+} 
+
+.center {
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
+  }
+  
+a {
+    text-decoration: none;
+}
+
+.top {
+    background-image: 
+        url(img/Group.png),
+        url(img/Фон.jpg);
+    background-repeat: no-repeat;
+    background-position: 
+        left 400px bottom 120px, 
+        center;
+    height: 735px;
+    background-size: cover;
+}
+
+.top__text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+    color: #202027;
+    margin-bottom: 16px;
+}
+  
+.header {
+    height: 77px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.top__title{
+    color: #202027;
+    font-family: Montserrat;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 196px;
+    margin-bottom: 24px;
+    max-width: 790px;
+}
+
+.top__text{
+    color: #202027;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    margin-bottom: 64px;
+}
+
+.top__text-1{
+    color: #202027;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.header__button {
+    display: flex;
+    width: 247px;
+    padding: 16px 28px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 60px;
+    border: 1px solid #202027;
+    background: #202027;
+    font-family: 'Montserrat';
+    color: #FFF;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 141.688%
+}
+
+.star__one{
+    top: 0; 
+    left: 0;
+}
