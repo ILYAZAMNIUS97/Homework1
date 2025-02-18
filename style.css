@@ -1,0 +1,235 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.center {
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
+}
+
+a {
+  text-decoration: none;
+}
+
+.top {
+  background-image: url(img/Group.png), url(img/Фон.jpg);
+  background-repeat: no-repeat;
+  background-position: left 400px bottom 120px, center;
+  height: 735px;
+  background-size: cover;
+}
+
+.top__text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 32px;
+  color: #202027;
+  margin-bottom: 16px;
+}
+
+.top__header {
+  height: 77px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.top__title {
+  color: #202027;
+  font-family: Montserrat;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 196px;
+  margin-bottom: 24px;
+  max-width: 790px;
+}
+
+.top__text {
+  color: #202027;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+  margin-bottom: 64px;
+}
+
+.top__text_bold {
+  color: #202027;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.top__button {
+  display: flex;
+  width: 247px;
+  padding: 16px 28px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 60px;
+  border: 1px solid #202027;
+  background: #202027;
+  font-family: "Montserrat";
+  color: #FFF;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 141.688%;
+  cursor: pointer;
+}
+
+.top__button:hover {
+  color: #202027;
+  background: #FFF;
+  transition: all 1s;
+}
+
+.banner {
+  display: flex;
+  flex-direction: row;
+  background-color: #BCEC30;
+  padding: 27px 49px;
+  justify-content: space-between;
+  background-repeat: no-repeat;
+}
+
+.banner__text {
+  color: #202027;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.games {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 65px;
+  align-self: stretch;
+  background: #202027;
+}
+
+.games__title {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-top: 94px;
+}
+
+.games__description {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+  max-width: 788px;
+}
+
+.games__list {
+  max-height: 1060px;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.games__card {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 4;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+}
+
+.games__card:hover {
+  transform: scale(1.05);
+  transition: all 1s;
+}
+
+.games__image {
+  border-radius: 30px;
+  height: 314px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.games__card_top {
+  margin-top: -40px;
+}
+
+.games__image_1 {
+  background: url(img/card1.png);
+}
+
+.games__image_2 {
+  background: url(img/card2.png);
+}
+
+.games__image_3 {
+  background: url(img/card3.png);
+}
+
+.games__image_4 {
+  background: url(img/card4.png);
+}
+
+.games__image_5 {
+  background: url(img/card5.png);
+}
+
+.games__image_6 {
+  background: url(img/card6.png);
+}
+
+.stone {
+  position: absolute;
+}
+
+.games__number {
+  width: 111px;
+  height: 36px;
+  color: rgb(32, 32, 39);
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 52.58px;
+  background: rgb(247, 247, 247);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 13px;
+  margin-left: 32px;
+  margin-bottom: 10px;
+}
+
+.games__name {
+  color: rgb(32, 32, 39);
+  font-size: 32px;
+  font-weight: 700;
+  text-align: left;
+  padding: 0 36px 32px;
+  max-width: 372px;
+}/*# sourceMappingURL=style.css.map */
