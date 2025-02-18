@@ -36,7 +36,7 @@ a {
     margin-bottom: 16px;
 }
 
-.header {
+.top__header {
     height: 77px;
     display: flex;
     flex-wrap: wrap;
@@ -64,7 +64,7 @@ a {
     margin-bottom: 64px;
 }
 
-.top__text-1 {
+.top__text_bold {
     color: #202027;
     font-family: Montserrat;
     font-size: 24px;
@@ -73,7 +73,7 @@ a {
     line-height: 32px;
 }
 
-.header__button {
+.top__button {
     display: flex;
     width: 247px;
     padding: 16px 28px;
@@ -93,7 +93,7 @@ a {
     cursor: pointer;
 }
 
-.header__button:hover {
+.top__button:hover {
     color: #202027;
     background: #FFF;
     transition: all 1s;
