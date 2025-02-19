@@ -23,7 +23,7 @@
                         class="top__text top__text_bold">приступай</span>.
                 </p>
                 <form class="top__form" action="#">
-                    <button class="top__button">Поехали!</button>
+                    <button class="top__button" id="go-button">Поехали!</button>
                 </form>
             </section>
         </header>
@@ -42,6 +42,12 @@
             Игры несложные — в них может поиграть каждый. <br>
             Все игры доступны для пользования.</p>
         <div class="games__list">
+            <script>
+                document.getElementById('go-button').addEventListener('click', function(event) {
+                  document.getElementById('Об_играх')
+                  .scrollIntoView({
+                    behavior: 'smooth' });});
+            </script>
             <a class="games__card" href="#">
                 <div class="games__image games__image_1"></div>
                 <div class="games__number">Игра № 1</div>

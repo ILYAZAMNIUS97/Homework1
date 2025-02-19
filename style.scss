@@ -20,11 +20,19 @@ a {
 }
 
 .top {
-    background-image: url(img/Group.png), url(img/Фон.jpg);
+    background-image: 
+        url(img/Group\ 1.png), 
+        url(img/Group\ 3.png);
+    background-position: 
+        63px 93px, 
+        calc(225% - 1px) calc(100% - 1px), 153% -230px;
+    background-size: 
+        auto, 
+        auto; 
+    background-color: #E1FF8F;
     background-repeat: no-repeat;
-    background-position: left 400px bottom 120px, center;
-    height: 735px;
-    background-size: cover;
+    width: 1440px;
+    height: 800px;
 }
 
 .top__text {
