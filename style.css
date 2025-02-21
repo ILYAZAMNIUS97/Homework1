@@ -19,11 +19,12 @@ a {
 }
 
 .top {
-  background-image: url(img/Group.png), url(img/Фон.jpg);
+  background-image: url(img/Group\ 1.png), url(img/Group\ 3.png);
+  background-position: 63px 93px, calc(225% - 1px) calc(100% - 1px), 153% -230px;
+  background-size: auto, auto;
+  background-color: #E1FF8F;
   background-repeat: no-repeat;
-  background-position: left 400px bottom 120px, center;
-  height: 735px;
-  background-size: cover;
+  height: 710px;
 }
 
 .top__text {
@@ -60,7 +61,7 @@ a {
   font-style: normal;
   font-weight: 400;
   line-height: 32px;
-  margin-bottom: 64px;
+  margin-bottom: 48px;
 }
 
 .top__text_bold {
@@ -121,9 +122,10 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 65px;
+  gap: 24px;
   align-self: stretch;
   background: #202027;
+  height: 1470px;
 }
 
 .games__title {
@@ -147,21 +149,25 @@ a {
 }
 
 .games__list {
+  padding-top: 48px;
   max-height: 1060px;
   max-width: 1200px;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 32px;
-  align-items: start;
 }
 
 .games__card {
   display: flex;
   flex-direction: column;
-  grid-column: span 4;
+  flex: 1 1 calc(33.333% - 32px);
+  /* Три карточки в строке с учетом gap */
   background-color: #FFFFFF;
   border-radius: 30px;
+  overflow: hidden;
+  /* Чтобы скругленные углы работали корректно */
+  box-sizing: border-box;
+  /* Учитываем padding и border в ширине */
 }
 
 .games__card:hover {
@@ -220,9 +226,9 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 13px;
+  margin-top: 32px;
   margin-left: 32px;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
 .games__name {
@@ -232,4 +238,20 @@ a {
   text-align: left;
   padding: 0 36px 32px;
   max-width: 372px;
+}
+
+/* Высота карточек */
+.games__card_1,
+.games__card_3 {
+  height: 473px;
+}
+
+.games__card_2,
+.games__card_5 {
+  height: 512px;
+}
+
+.games__card_4,
+.games__card_6 {
+  height: 551px;
 }/*# sourceMappingURL=style.css.map */
