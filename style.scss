@@ -265,4 +265,158 @@ a {
     height: 551px;
 }
 
+.minigames {
+    position: relative;
+    padding-top: 72px;
+    padding-bottom: 144px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background: rgb(32, 32, 39);
+}
+
+.minigames__title {
+    color: rgb(255, 255, 255);
+    font-family: inherit;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 78px;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.minigames__list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.minigames__card {
+    margin-top: 32px;
+    display: flex;
+    max-height: 500px;
+    border-radius: 50px;
+    box-shadow: 0px 20px 67px -12px rgba(0, 0, 0, 0.13);
+    background: rgb(255, 255, 255);
+    justify-content: space-between;
+    height: 500px;
+    flex-direction: row;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Плавное увеличение и тень */
+    position: relative;
+    /* Для z-index */
+}
+
+.minigames__card:hover {
+    transform: scale(1.05);
+    /* Увеличение на 5% */
+    z-index: 1;
+    /* Поднимаем карточку над другими */
+    transition: all 1s;
+    box-shadow: 0px 20px 67px -12px rgba(0, 0, 0, 0.3);
+    /* Увеличенная тень */
+}
+
+.minigames__content {
+    padding: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 600px;
+}
+
+.minigames__name {
+    color: rgb(32, 32, 39);
+    font-family: inherit;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 59px;
+    text-align: left;
+    white-space: pre-line;
+    /* Сохраняет переносы строк */
+    word-break: break-word;
+    /* Переносит длинные слова, если они не помещаются */
+}
+
+.minigames__description {
+    color: rgb(32, 32, 39);
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: left;
+    margin-top: 24px;
+    display: block;
+    white-space: pre-line;
+    /* Сохраняет переносы строк */
+    word-break: break-word;
+    /* Переносит длинные слова, если они не помещаются */
+}
+
+.minigames__button {
+    margin-top: 36px;
+    padding: 16px 28px 16px 28px;
+    border-radius: 60px;
+    background: rgb(32, 32, 39);
+    color: rgb(255, 255, 255);
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 141.69%;
+    text-align: center;
+    width: 247px;
+    height: 66px;
+    cursor: pointer;
+}
+
+.minigames__button:hover {
+    background: rgb(255, 255, 255);
+    color: rgb(32, 32, 39);
+}
+
+.minigames__image {
+    max-width: 600px;
+    max-height: 500px;
+    border-radius: 30px;
+}
+
+.footer {
+    width: 100%;
+    /* Ширина на всю страницу */
+    height: 150px;
+    /* Высота футера */
+    flex-shrink: 0;
+    /* Запрет сжатия */
+    background: #BDED35;
+    /* Цвет фона */
+    display: flex;
+    justify-content: center;
+    /* Центрирование содержимого по горизонтали */
+    align-items: center;
+    /* Центрирование содержимого по вертикали */
+}
+
+.footer__content {
+    text-align: center;
+    /* Центрирование текста */
+}
+
+.footer__text {
+    color: #000;
+    /* Цвет текста */
+    font-family: Montserrat, sans-serif;
+    /* Шрифт */
+    font-size: 24px;
+    /* Размер текста */
+    font-style: normal;
+    /* Обычный стиль шрифта */
+    font-weight: 600;
+    /* Жирный шрифт */
+    line-height: normal;
+    /* Стандартная высота строки */
+    margin: 0;
+    /* Убираем отступы */
+}
+
 @import 'mobile';
