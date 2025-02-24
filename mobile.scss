@@ -66,6 +66,7 @@
 
     .minigames {
         padding-top: 48px;
+        padding-bottom:  48px;
     }
 
     .minigames__title {
@@ -74,6 +75,12 @@
         font-weight: 700;
         line-height: normal;
         margin-left: 16px;
+        margin-bottom: 24px;
+    }
+
+    .minigames__list{
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
     .minigames__card {
@@ -105,7 +112,25 @@
 
     .minigames__button {
         width: 100%;
+        padding: 16px 28px;
+        border-radius: 60px;
+        font-size: 16px;
+        font-weight: 600;
         /* Ширина кнопки на всю карточку */
+    }
+
+    .minigames__name{
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .minigames__description{
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
     }
 
     .top__title {
@@ -140,6 +165,19 @@
 
     .desktop-br {
         display: none;
+    }
+
+    .mobile-br {
+        display: inline;
+    }
+
+    .footer{
+        height: 100px;
+    }
+
+    .footer__text{
+        font-size: 16px;
+        font-weight: 600;
     }
 
 
