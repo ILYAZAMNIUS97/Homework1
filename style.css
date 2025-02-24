@@ -20,7 +20,7 @@ a {
 
 .top {
   background-image: url(img/Group\ 1.png), url(img/Group\ 3.png);
-  background-position: 63px 93px, calc(225% - 1px) calc(100% - 1px), 153% -230px;
+  background-position: 63px 93px, calc(230% - 1px) calc(90% - 1px), 153% -230px;
   background-size: auto, auto;
   background-color: #E1FF8F;
   background-repeat: no-repeat;
@@ -106,6 +106,16 @@ a {
   padding: 27px 49px;
   justify-content: space-between;
   background-repeat: no-repeat;
+  overflow: hidden; /* Скрываем содержимое, выходящее за пределы блока */
+  position: relative; /* Для корректного позиционирования */
+  white-space: nowrap; /* Запрещаем перенос строк */
+}
+
+.banner__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  animation: marquee 20s linear infinite; /* Анимация бегущей строки */
 }
 
 .banner__text {
@@ -116,8 +126,21 @@ a {
   line-height: 110%;
   letter-spacing: 1.2px;
   text-transform: uppercase;
+  margin-right: 50px; /* Отступ между текстом и изображением */
 }
 
+.banner__star {
+  margin-right: 50px; /* Отступ между изображениями и текстом */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%); /* Начальная позиция (оригинальное содержимое) */
+  }
+  100% {
+    transform: translateX(-50%); /* Конечная позиция (сдвигаем на половину ширины) */
+  }
+}
 .games {
   display: flex;
   flex-direction: column;
@@ -126,6 +149,10 @@ a {
   align-self: stretch;
   background: #202027;
   height: 1470px;
+  background-repeat: no-repeat;
+  background-image: url(img/Star\ 1.png), url(img/Group\ 4.png);
+  background-position: 983px 77px, 25px 770px;
+  background-size: auto, auto;
 }
 
 .games__title {
@@ -264,6 +291,10 @@ a {
   flex-wrap: wrap;
   flex-direction: column;
   background: rgb(32, 32, 39);
+  background-repeat: no-repeat;
+  background-image: url(img/Group\ 5.png), url(img/Group\ 6.png);
+  background-position: 1158px 47px, 1249px 3366px;
+  background-size: auto, auto;
 }
 
 .minigames__title {
@@ -374,38 +405,37 @@ a {
 
 .footer {
   width: 100%;
-  /* Ширина на всю страницу */
   height: 150px;
-  /* Высота футера */
   flex-shrink: 0;
-  /* Запрет сжатия */
   background: #BDED35;
-  /* Цвет фона */
   display: flex;
   justify-content: center;
-  /* Центрирование содержимого по горизонтали */
   align-items: center;
-  /* Центрирование содержимого по вертикали */
 }
 
 .footer__content {
   text-align: center;
-  /* Центрирование текста */
 }
 
 .footer__text {
   color: #000;
-  /* Цвет текста */
   font-family: Montserrat, sans-serif;
-  /* Шрифт */
   font-size: 24px;
-  /* Размер текста */
   font-style: normal;
-  /* Обычный стиль шрифта */
   font-weight: 600;
-  /* Жирный шрифт */
   line-height: normal;
-  /* Стандартная высота строки */
   margin: 0;
-  /* Убираем отступы */
+}
+
+@media (max-width: 767px) {
+  .center {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media (max-width: 1024px) {
+  .center {
+    padding-left: calc(50% - 393px);
+    padding-right: calc(50% - 393px);
+  }
 }/*# sourceMappingURL=style.css.map */
