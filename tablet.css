@@ -1,6 +1,87 @@
-@media (max-width: 1024px) {
+@charset "UTF-8";
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Общие стили для планшетов */
   .center {
-    padding-left: calc(50% - 393px);
+    padding-left: calc(50% - 393px); /* Центрирование контента */
     padding-right: calc(50% - 393px);
+  }
+  /* Стили для блока .top */
+  .top {
+    background-image: url(img/Vector.png), url(img/Group\ 7.png), url(img/Group\ 8.png);
+    height: 600px; /* Уменьшаем высоту */
+    background-position: 610px -1px, 48px 45px, 550px 440px;
+  }
+  .top__content {
+    margin-top: 60px;
+  }
+  .top__title {
+    font-size: 48px; /* Уменьшаем размер заголовка */
+    margin-top: 120px; /* Корректируем отступы */
+    margin-left: 0; /* Убираем смещение влево */
+  }
+  .top__text {
+    font-size: 20px; /* Уменьшаем размер текста */
+    margin-top: 24px; /* Корректируем отступы */
+    transform: translateX(0); /* Убираем смещение */
+  }
+  .top__button {
+    width: 220px; /* Уменьшаем ширину кнопки */
+    font-size: 20px; /* Уменьшаем размер текста кнопки */
+    margin-top: 24px; /* Корректируем отступы */
+  }
+  /* Стили для блока .banner */
+  .banner {
+    padding: 20px 32px; /* Корректируем отступы */
+  }
+  .banner__text {
+    font-size: 24px; /* Уменьшаем размер текста */
+  }
+  .banner__star {
+    width: 24px; /* Уменьшаем размер звезды */
+  }
+  /* Стили для блока .minigames */
+  .minigames {
+    padding-top: 64px; /* Корректируем отступы */
+    padding-bottom: 64px;
+  }
+  .minigames__title {
+    font-size: 48px; /* Уменьшаем размер заголовка */
+    margin-left: 0; /* Убираем смещение влево */
+    text-align: center; /* Центрируем текст */
+  }
+  .minigames__list {
+    padding-left: 0; /* Убираем отступы */
+    padding-right: 0;
+  }
+  .minigames__card {
+    flex-direction: row; /* Карточки в строку */
+    height: 400px; /* Уменьшаем высоту карточек */
+    max-height: none;
+  }
+  .minigames__content {
+    width: 50%; /* Ширина контента 50% */
+    padding: 32px; /* Корректируем отступы */
+  }
+  .minigames__image {
+    width: 50%; /* Ширина изображения 50% */
+    max-width: none;
+    border-radius: 30px 0 0 30px; /* Скругляем левые углы */
+  }
+  .minigames__name {
+    font-size: 36px; /* Уменьшаем размер заголовка */
+  }
+  .minigames__description {
+    font-size: 18px; /* Уменьшаем размер текста */
+  }
+  .minigames__button {
+    width: 200px; /* Уменьшаем ширину кнопки */
+    font-size: 18px; /* Уменьшаем размер текста кнопки */
+  }
+  /* Стили для блока .footer */
+  .footer {
+    height: 120px; /* Уменьшаем высоту футера */
+  }
+  .footer__text {
+    font-size: 20px; /* Уменьшаем размер текста */
   }
 }/*# sourceMappingURL=tablet.css.map */

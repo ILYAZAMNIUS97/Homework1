@@ -64,7 +64,11 @@ a {
   margin-bottom: 48px;
 }
 
-.mobile-br {
+.top__mobile-br {
+  display: none;
+}
+
+.minigames__mobile-br {
   display: none;
 }
 
@@ -75,6 +79,10 @@ a {
   font-style: normal;
   font-weight: 600;
   line-height: 32px;
+}
+
+.top__text--bold {
+  font-weight: 600;
 }
 
 .top__button {
@@ -455,7 +463,7 @@ a {
     font-size: 16px;
     border-radius: 60px;
     margin-top: 36px;
-    margin-left: 46px;
+    margin-left: 26px;
   }
   .top__button:hover {
     background: #202027;
@@ -548,7 +556,7 @@ a {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-left: 57px;
+    margin-left: 40px;
     margin-top: 147px;
   }
   .top__text {
@@ -559,7 +567,7 @@ a {
     font-weight: 400;
     line-height: normal;
     margin-top: 36px;
-    transform: translateX(40px);
+    transform: translateX(20px);
   }
   .top__text_bold {
     font-size: 16px;
@@ -567,10 +575,19 @@ a {
     font-weight: 600;
     line-height: normal;
   }
-  .desktop-br {
+  .top__text--bold {
+    font-weight: 600;
+  }
+  .minigames__mobile-br {
+    display: inline;
+  }
+  .minigames__desktop-br {
     display: none;
   }
-  .mobile-br {
+  .top__desktop-br {
+    display: none;
+  }
+  .top__mobile-br {
     display: inline;
   }
   .footer {
@@ -581,9 +598,89 @@ a {
     font-weight: 600;
   }
 }
-@media (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Общие стили для планшетов */
   .center {
-    padding-left: calc(50% - 393px);
+    padding-left: calc(50% - 393px); /* Центрирование контента */
     padding-right: calc(50% - 393px);
+  }
+  /* Стили для блока .top */
+  .top {
+    background-image: url(img/Vector.png), url(img/Group\ 7.png), url(img/Group\ 8.png);
+    height: 600px; /* Уменьшаем высоту */
+    background-position: 610px -1px, 48px 45px, 550px 440px;
+  }
+  .top__content {
+    margin-top: 60px;
+  }
+  .top__title {
+    font-size: 48px; /* Уменьшаем размер заголовка */
+    margin-top: 120px; /* Корректируем отступы */
+    margin-left: 0; /* Убираем смещение влево */
+  }
+  .top__text {
+    font-size: 20px; /* Уменьшаем размер текста */
+    margin-top: 24px; /* Корректируем отступы */
+    transform: translateX(0); /* Убираем смещение */
+  }
+  .top__button {
+    width: 220px; /* Уменьшаем ширину кнопки */
+    font-size: 20px; /* Уменьшаем размер текста кнопки */
+    margin-top: 24px; /* Корректируем отступы */
+  }
+  /* Стили для блока .banner */
+  .banner {
+    padding: 20px 32px; /* Корректируем отступы */
+  }
+  .banner__text {
+    font-size: 24px; /* Уменьшаем размер текста */
+  }
+  .banner__star {
+    width: 24px; /* Уменьшаем размер звезды */
+  }
+  /* Стили для блока .minigames */
+  .minigames {
+    padding-top: 64px; /* Корректируем отступы */
+    padding-bottom: 64px;
+  }
+  .minigames__title {
+    font-size: 48px; /* Уменьшаем размер заголовка */
+    margin-left: 0; /* Убираем смещение влево */
+    text-align: center; /* Центрируем текст */
+  }
+  .minigames__list {
+    padding-left: 0; /* Убираем отступы */
+    padding-right: 0;
+  }
+  .minigames__card {
+    flex-direction: row; /* Карточки в строку */
+    height: 400px; /* Уменьшаем высоту карточек */
+    max-height: none;
+  }
+  .minigames__content {
+    width: 50%; /* Ширина контента 50% */
+    padding: 32px; /* Корректируем отступы */
+  }
+  .minigames__image {
+    width: 50%; /* Ширина изображения 50% */
+    max-width: none;
+    border-radius: 30px 0 0 30px; /* Скругляем левые углы */
+  }
+  .minigames__name {
+    font-size: 36px; /* Уменьшаем размер заголовка */
+  }
+  .minigames__description {
+    font-size: 18px; /* Уменьшаем размер текста */
+  }
+  .minigames__button {
+    width: 200px; /* Уменьшаем ширину кнопки */
+    font-size: 18px; /* Уменьшаем размер текста кнопки */
+  }
+  /* Стили для блока .footer */
+  .footer {
+    height: 120px; /* Уменьшаем высоту футера */
+  }
+  .footer__text {
+    font-size: 20px; /* Уменьшаем размер текста */
   }
 }/*# sourceMappingURL=style.css.map */
