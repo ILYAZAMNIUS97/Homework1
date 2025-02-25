@@ -598,17 +598,17 @@ a {
     font-weight: 600;
   }
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 833px) {
   /* Общие стили для планшетов */
   .center {
-    padding-left: calc(50% - 393px); /* Центрирование контента */
-    padding-right: calc(50% - 393px);
+    padding-left: 24px;
+    padding-right: 24px;
   }
   /* Стили для блока .top */
   .top {
     background-image: url(img/Vector.png), url(img/Group\ 7.png), url(img/Group\ 8.png);
     height: 600px; /* Уменьшаем высоту */
-    background-position: 610px -1px, 48px 45px, 550px 440px;
+    background-position: 450px -1px, 48px 45px, 550px 440px;
   }
   .top__content {
     margin-top: 60px;
@@ -638,15 +638,26 @@ a {
   .banner__star {
     width: 24px; /* Уменьшаем размер звезды */
   }
+  .games {
+    background-position: 310px 77px, 5px 1350px;
+  }
+  .games__image_1,
+  .games__image_2,
+  .games__image_3,
+  .games__image_4,
+  .games__image_5,
+  .games__image_6 {
+    background-position: center;
+  }
+  .games__name {
+    font-size: 25px;
+    padding: 0 30px 25px;
+  }
   /* Стили для блока .minigames */
   .minigames {
     padding-top: 64px; /* Корректируем отступы */
     padding-bottom: 64px;
-  }
-  .minigames__title {
-    font-size: 48px; /* Уменьшаем размер заголовка */
-    margin-left: 0; /* Убираем смещение влево */
-    text-align: center; /* Центрируем текст */
+    background-position: 558px 47px, 1249px 3366px;
   }
   .minigames__list {
     padding-left: 0; /* Убираем отступы */
@@ -668,13 +679,21 @@ a {
   }
   .minigames__name {
     font-size: 36px; /* Уменьшаем размер заголовка */
+    line-height: normal;
   }
   .minigames__description {
     font-size: 18px; /* Уменьшаем размер текста */
+    line-height: normal;
   }
   .minigames__button {
     width: 200px; /* Уменьшаем ширину кнопки */
     font-size: 18px; /* Уменьшаем размер текста кнопки */
+  }
+  .minigames__desktop-br {
+    display: none;
+  }
+  .minigames__mobile-br {
+    display: none;
   }
   /* Стили для блока .footer */
   .footer {
