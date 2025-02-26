@@ -9,12 +9,16 @@
     /* Скрываем блок "Об играх" */
   }
   .top {
-    background-image: url(img/Group\ 1mob.png), url(img/Vectormob.png);
-    background-position: 37px 64px, 220px 0;
+    background-image: url(img/Group\ 10.png), url(img/Group\ 11.png), url(img/Vectormob.png);
+    background-position: 37px 64px, 272px 557px, 270px 0;
     background-size: auto, auto;
     background-color: #E1FF8F;
     background-repeat: no-repeat;
     height: 676px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем элементы по горизонтали */
+    text-align: center; /* Центрируем текст */
   }
   .top__button {
     width: 285px;
@@ -22,14 +26,12 @@
     color: #FFF;
     font-size: 16px;
     border-radius: 60px;
-    margin-top: 36px;
-    margin-left: 26px;
+    margin-top: 36px; /* Отступ сверху для кнопки */
+    text-align: center; /* Центрируем текст внутри кнопки */
   }
   .top__button:hover {
-    background: #202027;
-    /* Отключаем изменение цвета */
-    color: #FFF;
-    /* Отключаем изменение текста */
+    background: #202027; /* Отключаем изменение цвета */
+    color: #FFF; /* Отключаем изменение текста */
   }
   .minigames__button:hover {
     background: rgb(32, 32, 39);
@@ -110,24 +112,22 @@
     line-height: normal;
   }
   .top__title {
-    width: 262px;
-    text-align: center;
+    width: 296px;
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-left: 40px;
     margin-top: 147px;
+    text-align: center; /* Центрируем заголовок */
   }
   .top__text {
     width: 296px;
-    text-align: center;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     margin-top: 36px;
-    transform: translateX(20px);
+    text-align: center; /* Центрируем текст */
   }
   .top__text_bold {
     font-size: 16px;
