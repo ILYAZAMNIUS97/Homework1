@@ -1,5 +1,4 @@
 // task1
-
 let password = 'пароль';
 let userInput = prompt('Введите пароль');
 
@@ -10,36 +9,32 @@ if (userInput === password) {
 }
 
 // task2
+let numberC = 2; // Меняйте значение переменной для проверки: 0, 10, -3, 2
 
-let c = 2; // Меняйте значение переменной для проверки: 0, 10, -3, 2
-
-if (c > 0 && c < 10) {
+if (numberC > 0 && numberC < 10) {
     console.log('Верно');
 } else {
     console.log('Неверно');
 }
 
 // task3
+let numberD = 50;
+let numberE = 120; // Меняйте значения переменных для проверки
 
-let d = 50;
-let e = 120; // Меняйте значения переменных для проверки
-
-if (d > 100 || e > 100) {
+if (numberD > 100 || numberE > 100) {
     console.log('Верно');
 } else {
     console.log('Неверно');
 }
 
 // task4
-
-let a = '2';
-let b = '3';
+let numA = '2';
+let numB = '3';
 
 // Исправленный код
-alert(Number(a) + Number(b)); // Выведет 5
+alert(Number(numA) + Number(numB)); // Выведет 5
 
 // task5
-
 let monthNumber = 12; // Меняйте значение переменной для проверки
 
 if (monthNumber < 1 || monthNumber > 12) {
