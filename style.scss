@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth; /* Плавный скролл для всей страницы */
+}
+
 body {
     font-family: "Montserrat", sans-serif;
 }
@@ -347,7 +351,7 @@ a {
     flex-direction: column;
 }
 
-.minigames__card {
+.card {
     margin-top: 32px;
     display: flex;
     max-height: 500px;
@@ -363,7 +367,7 @@ a {
     /* Для z-index */
 }
 
-.minigames__card:hover {
+.card:hover {
     transform: scale(1.05);
     /* Увеличение на 5% */
     z-index: 1;
@@ -373,7 +377,7 @@ a {
     /* Увеличенная тень */
 }
 
-.minigames__content {
+.card__content {
     padding: 48px;
     display: flex;
     flex-wrap: wrap;
@@ -382,7 +386,7 @@ a {
     width: 600px;
 }
 
-.minigames__name {
+.card__title {
     color: rgb(32, 32, 39);
     font-family: inherit;
     font-size: 48px;
@@ -395,7 +399,7 @@ a {
     /* Переносит длинные слова, если они не помещаются */
 }
 
-.minigames__description {
+.card__description {
     color: rgb(32, 32, 39);
     font-family: inherit;
     font-size: 24px;
@@ -410,7 +414,7 @@ a {
     /* Переносит длинные слова, если они не помещаются */
 }
 
-.minigames__button {
+.card__button {
     margin-top: 36px;
     padding: 16px 28px 16px 28px;
     border-radius: 60px;
@@ -426,15 +430,23 @@ a {
     cursor: pointer;
 }
 
-.minigames__button:hover {
+.card__button:hover {
     background: rgb(255, 255, 255);
     color: rgb(32, 32, 39);
 }
 
-.minigames__image {
+.card__image {
     max-width: 600px;
     max-height: 500px;
     border-radius: 30px;
+}
+
+.card__mobile-br {
+    display: none; /* По умолчанию скрыт */
+}
+
+.card__desktop-br {
+    display: inline; /* По умолчанию виден */
 }
 
 .footer {
