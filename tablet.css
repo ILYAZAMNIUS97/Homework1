@@ -39,6 +39,7 @@
   .banner__star {
     width: 24px; /* Уменьшаем размер звезды */
   }
+  /* Стили для блока .games */
   .games {
     background-position: 310px 77px, 5px 1350px;
   }
@@ -64,37 +65,39 @@
     padding-left: 0; /* Убираем отступы */
     padding-right: 0;
   }
-  .minigames__card {
+  /* Стили для карточек */
+  .card {
     flex-direction: row; /* Карточки в строку */
     height: 400px; /* Уменьшаем высоту карточек */
     max-height: none;
   }
-  .minigames__content {
+  .card__content {
     width: 50%; /* Ширина контента 50% */
     padding: 32px; /* Корректируем отступы */
   }
-  .minigames__image {
+  .card__image {
     width: 50%; /* Ширина изображения 50% */
     max-width: none;
     border-radius: 30px 0 0 30px; /* Скругляем левые углы */
   }
-  .minigames__name {
+  .card__title {
     font-size: 36px; /* Уменьшаем размер заголовка */
     line-height: normal;
   }
-  .minigames__description {
+  .card__description {
     font-size: 18px; /* Уменьшаем размер текста */
     line-height: normal;
   }
-  .minigames__button {
+  .card__button {
     width: 200px; /* Уменьшаем ширину кнопки */
     font-size: 18px; /* Уменьшаем размер текста кнопки */
   }
-  .minigames__desktop-br {
-    display: none;
+  /* Стили для <br> */
+  .card__mobile-br {
+    display: none; /* Скрываем на планшетах */
   }
-  .minigames__mobile-br {
-    display: none;
+  .card__desktop-br {
+    display: none; /* Скрываем на планшетах */
   }
   /* Стили для блока .footer */
   .footer {

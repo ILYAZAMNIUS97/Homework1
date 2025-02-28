@@ -1,28 +1,59 @@
+// Обработчик для кнопки "Поехали!"
 document.getElementById('go-button').addEventListener('click', function (event) {
-    document.getElementById('Об_играх')
-        .scrollIntoView({ behavior: 'smooth' });
-});
-
-document.getElementById('go-button').addEventListener('click', function(event) {
     event.preventDefault(); // Предотвращаем стандартное поведение формы
-    document.querySelector('.minigames').scrollIntoView({ behavior: 'smooth' }); // Плавный скролл
+
+    // Определяем, какая секция должна быть показана
+    let targetSection;
+    if (window.innerWidth < 768) {
+        // Мобильная версия: скролл до блока "Мини-игры"
+        targetSection = document.getElementById('minigames');
+    } else {
+        // Десктоп и планшет: скролл до блока "Об играх"
+        targetSection = document.getElementById('games');
+    }
+
+    // Если целевая секция найдена, выполняем плавный скролл
+    if (targetSection) {
+        targetSection.scrollIntoView({
+            behavior: 'smooth', // Плавная анимация
+            block: 'start'      // Выравнивание по верхней границе
+        });
+    } else {
+        console.error('Целевая секция не найдена.');
+    }
 });
 
-//task1
+// Обработчик для карточек в секции "Об играх"
+document.querySelectorAll('.games__card').forEach(card => {
+    card.addEventListener('click', function (e) {
+        e.preventDefault(); // Отменяем стандартное поведение ссылки
+        const targetId = this.getAttribute('href'); // Получаем ID целевого элемента
+        const targetElement = document.querySelector(targetId); // Находим целевой элемент
+
+        if (targetElement) {
+            // Плавный скролл до целевого элемента
+            targetElement.scrollIntoView({
+                behavior: 'smooth', // Плавная анимация
+                block: 'start'      // Выравнивание по верхней границе
+            });
+        } else {
+            console.error(`Элемент с ID "${targetId}" не найден.`);
+        }
+    });
+});
+
+// Примеры задач (оставлены без изменений)
 let a = 10;
 alert(a);
 a = 20;
 alert(a);
 
-//task2
 let firstIPhoneYear = 2007;
 alert(firstIPhoneYear);
 
-//task3
 let creatorName = "Brendan Eich";
 alert(creatorName);
 
-//task4
 let number1 = 10;
 let number2 = 2;
 alert(number1 + number2);
@@ -30,16 +61,13 @@ alert(number1 - number2);
 alert(number1 * number2);
 alert(number1 / number2);
 
-//task5
 let result = Math.pow(2, 5);
 alert(result);
 
-//task6
 let numberA = 9;
 let numberB = 2;
 alert(numberA % numberB);
 
-//task7
 let number = 1;
 number += 5;
 number -= 3;
@@ -47,17 +75,14 @@ number *= 7;
 number /= 3;
 alert(number);
 
-//task8
 let age = prompt("Сколько вам лет?");
 alert(age);
 
-//task9
 let user = {
     name: "Иван",
     age: 25,
     isAdmin: true
 };
 
-//task10
 let userName = prompt("Как вас зовут?");
 alert(`Привет, ${userName}!`);
