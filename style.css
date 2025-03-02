@@ -85,10 +85,6 @@ a {
   line-height: 32px;
 }
 
-.top__text--bold {
-  font-weight: 600;
-}
-
 .top__button {
   display: flex;
   width: 247px;
@@ -571,9 +567,6 @@ a {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-  }
-  .top__text--bold {
-    font-weight: 600;
   }
   .card__mobile-br {
     display: inline; /* Показываем на мобильных */
