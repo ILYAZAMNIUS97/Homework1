@@ -10,7 +10,7 @@
   }
   .top {
     background-image: url(img/Group\ 10.png), url(img/Group\ 11.png), url(img/Vectormob.png);
-    background-position: 37px 64px, 272px 557px, 270px 0;
+    background-position: 37px 64px, 272px 557px, 215px 0;
     background-size: auto, auto;
     background-color: #E1FF8F;
     background-repeat: no-repeat;
@@ -60,12 +60,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-left: 16px;
     margin-bottom: 24px;
-  }
-  .minigames__list {
-    padding-left: 16px;
-    padding-right: 16px;
   }
   .card {
     flex-direction: column;
@@ -124,9 +119,6 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-  }
-  .top__text--bold {
-    font-weight: 600;
   }
   .card__mobile-br {
     display: inline; /* Показываем на мобильных */
