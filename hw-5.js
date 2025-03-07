@@ -1,11 +1,6 @@
 // Задание 1
 // Функция для нахождения меньшего из двух чисел
 function minNumber(a, b) {
-    // Если числа равны, возвращаем любое из них
-    if (a === b) {
-        return a;
-    }
-    
     // Возвращаем меньшее число
     return a < b ? a : b;
 }
@@ -51,18 +46,16 @@ console.log(result2); // Выведет: 36
 function askUserAge() {
     // Запрашиваем возраст у пользователя
     const ageInput = prompt('Сколько вам лет?');
-
+    
     // Преобразуем введённое значение в число
     const age = parseInt(ageInput, 10);
-
-    // Проверяем, является ли введённое значение числом
-    if (isNaN(age)) {
+    
+    // Объединяем проверки на неправильные значения (не число или отрицательное число)
+    if (isNaN(age) || age < 0) {
         alert('Вы ввели неправильное значение');
-    } else if (age < 0) {
-        alert('Вы ввели неправильное значение');
-    } else if (age >= 0 && age <= 12) {
+    } else if (age <= 12) {
         alert('Привет, друг!');
-    } else if (age >= 13) {
+    } else {
         alert('Добро пожаловать!');
     }
 }
@@ -114,33 +107,31 @@ for (let i = 0; i <= 10; i++) {
 }
 
 // Задание 7
-const circle1 = {
-    radius: 5, // Радиус первого круга
-
+// Выносим функции для вычисления площади и периметра круга отдельно
+const circleMethods = {
     // Метод для вычисления площади круга
     getArea: function() {
         return Math.PI * this.radius ** 2; // Площадь круга: π * r²
     },
-
+    
     // Метод для вычисления периметра окружности
     getPerimeter: function() {
         return 2 * Math.PI * this.radius; // Периметр окружности: 2 * π * r
     }
+};
+
+// Создаем объекты кругов
+const circle1 = {
+    radius: 5, // Радиус первого круга
 };
 
 const circle2 = {
     radius: 10, // Радиус второго круга
-
-    // Метод для вычисления площади круга
-    getArea: function() {
-        return Math.PI * this.radius ** 2; // Площадь круга: π * r²
-    },
-
-    // Метод для вычисления периметра окружности
-    getPerimeter: function() {
-        return 2 * Math.PI * this.radius; // Периметр окружности: 2 * π * r
-    }
 };
+
+// Привязываем методы к объектам с помощью Object.assign
+Object.assign(circle1, circleMethods);
+Object.assign(circle2, circleMethods);
 
 console.log(circle1.getArea());      // Выведет: 78.53981633974483
 console.log(circle1.getPerimeter()); // Выведет: 31.41592653589793
