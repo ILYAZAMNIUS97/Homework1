@@ -1,5 +1,4 @@
 // arithmetic-game.js
-
 // Функция для генерации случайного числа в заданном диапазоне
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -8,61 +7,72 @@ function getRandomNumber(min, max) {
 // Функция для генерации случайной арифметической задачи
 function generateArithmeticProblem() {
     const operators = ['+', '-', '*', '/'];
-    const operator = operators[getRandomNumber(0, operators.length - 1)]; // Случайный оператор
+    const operatorIndex = getRandomNumber(0, operators.length - 1);
+    const operator = operators[operatorIndex];
+    
     let num1, num2;
-
+    
     // Генерация чисел в зависимости от оператора
-    if (operator === '+') {
-        num1 = getRandomNumber(1, 100);
-        num2 = getRandomNumber(1, 100);
-    } else if (operator === '-') {
-        num1 = getRandomNumber(1, 100);
-        num2 = getRandomNumber(1, num1); // Убедимся, что результат не отрицательный
-    } else if (operator === '*') {
-        num1 = getRandomNumber(1, 20);
-        num2 = getRandomNumber(1, 20);
-    } else if (operator === '/') {
-        num2 = getRandomNumber(1, 20); // Делитель
-        num1 = num2 * getRandomNumber(1, 20); // Убедимся, что результат целый
+    switch (operator) {
+        case '+':
+            num1 = getRandomNumber(1, 100);
+            num2 = getRandomNumber(1, 100);
+            break;
+        case '-':
+            num1 = getRandomNumber(1, 100);
+            num2 = getRandomNumber(1, num1);
+            break;
+        case '*':
+            num1 = getRandomNumber(2, 12); // Упрощаем умножение для лучшего игрового опыта
+            num2 = getRandomNumber(2, 12);
+            break;
+        case '/':
+            num2 = getRandomNumber(2, 10); // Делитель
+            const multiplier = getRandomNumber(1, 10);
+            num1 = num2 * multiplier; // Гарантия целочисленного результата
+            break;
     }
-
+    
     return { num1, num2, operator };
 }
 
 // Функция для вычисления правильного ответа
-function calculateAnswer(num1, num2, operator) {
+function calculateAnswer({ num1, num2, operator }) {
     switch (operator) {
-        case '+':
-            return num1 + num2;
-        case '-':
-            return num1 - num2;
-        case '*':
-            return num1 * num2;
-        case '/':
-            return num1 / num2;
-        default:
-            return null;
+        case '+': return num1 + num2;
+        case '-': return num1 - num2;
+        case '*': return num1 * num2;
+        case '/': return num1 / num2;
+        default: return null;
     }
 }
 
 // Основная функция игры
 function startArithmeticGame() {
-    const { num1, num2, operator } = generateArithmeticProblem(); // Генерация задачи
-    const problem = `${num1} ${operator} ${num2}`; // Формируем строку задачи
-    const correctAnswer = calculateAnswer(num1, num2, operator); // Вычисляем правильный ответ
-
+    const problem = generateArithmeticProblem();
+    const { num1, num2, operator } = problem;
+    const problemText = `${num1} ${operator} ${num2}`;
+    const correctAnswer = calculateAnswer(problem);
+    
     // Запрашиваем ответ у пользователя
-    const userAnswer = parseFloat(prompt(`Решите задачу: ${problem}`));
-
+    const userInput = prompt(`Решите задачу: ${problemText}`);
+    
+    // Проверка на отмену или пустой ввод
+    if (userInput === null || userInput.trim() === '') {
+        return;
+    }
+    
+    const userAnswer = parseFloat(userInput);
+    
     // Проверяем ответ
-    if (userAnswer === correctAnswer) {
+    if (!isNaN(userAnswer) && Math.abs(userAnswer - correctAnswer) < 0.001) {
         alert('Правильно! Молодец!');
     } else {
         alert(`Неправильно. Правильный ответ: ${correctAnswer}`);
     }
 }
 
-// Назначаем функцию на кнопку "Играть!" в карточке №2
+// Запуск игры при нажатии на кнопку "Играть"
 document.addEventListener('DOMContentLoaded', () => {
     const playButton = document.querySelector('#game2 .card__button');
     if (playButton) {
