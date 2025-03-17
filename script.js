@@ -31,14 +31,13 @@ document.querySelectorAll('.games__card').forEach(card => {
         const targetElement = document.querySelector(targetId); // Находим целевой элемент
 
         if (targetElement) {
-            // Плавный скролл до целевого элемента
+            // Плавный скролл до целевого элемента с выравниванием по центру
             targetElement.scrollIntoView({
                 behavior: 'smooth', // Плавная анимация
-                block: 'start'      // Выравнивание по верхней границе
+                block: 'center'     // Выравнивание по центру
             });
         } else {
             console.error(`Элемент с ID "${targetId}" не найден.`);
         }
     });
 });
-
