@@ -102,3 +102,92 @@
     const generatedArrayA = generateRandomArrayA(numA);
     console.log(generatedArrayA); // Пример вывода: [3, 7, 0, 5, 2]
 }
+
+// Задание 7
+{
+    function getRandomNumberInRange(minValueB, maxValueB) {
+        // Проверяем, что входные данные — целые числа
+        if (!Number.isInteger(minValueB) || !Number.isInteger(maxValueB)) {
+            console.error("Пожалуйста, передайте целые числа.");
+            return null;
+        }
+
+        // Проверяем, что minValueB меньше maxValueB
+        if (minValueB >= maxValueB) {
+            console.error("Первое число должно быть меньше второго.");
+            return null;
+        }
+
+        // Генерируем случайное число в диапазоне [minValueB, maxValueB]
+        const randomNumberB = Math.floor(Math.random() * (maxValueB - minValueB + 1)) + minValueB;
+
+        return randomNumberB;
+    }
+
+    // Пример использования:
+    const minValueB = 5;
+    const maxValueB = 15;
+    const randomResult = getRandomNumberInRange(minValueB, maxValueB);
+    console.log("Случайное число в диапазоне:", randomResult); // Пример вывода: 7, 12, 15 и т.д.
+}
+
+// Задание 8
+{
+    // Создаем объект Date, который содержит текущую дату и время
+    const currentDate = new Date();
+
+    // Выводим текущую дату в консоль
+    console.log("Текущая дата:", currentDate);
+}
+
+// Задание 9
+{
+    // Создаем переменную currentDate, хранящую текущую дату
+    let currentDate = new Date();
+
+    // Выводим текущую дату для проверки
+    console.log("Текущая дата:", currentDate);
+
+    // Получаем текущий день месяца
+    let currentDay = currentDate.getDate();
+
+    // Устанавливаем новую дату, добавив 73 дня к текущей дате
+    currentDate.setDate(currentDay + 73);
+
+    // Выводим дату, которая наступит через 73 дня
+    console.log("Дата через 73 дня:", currentDate);
+}
+
+// Задание 10
+{
+    function formatDate(date) {
+        // Массивы для перевода месяцев и дней недели на русский язык
+        const months = [
+            "января", "февраля", "марта", "апреля", "мая", "июня",
+            "июля", "августа", "сентября", "октября", "ноября", "декабря"
+        ];
+        const daysOfWeek = [
+            "воскресенье", "понедельник", "вторник", "среда",
+            "четверг", "пятница", "суббота"
+        ];
+    
+        // Получаем компоненты даты
+        const day = date.getDate(); // День месяца
+        const month = months[date.getMonth()]; // Месяц (на русском)
+        const year = date.getFullYear(); // Год
+        const dayOfWeek = daysOfWeek[date.getDay()]; // День недели (на русском)
+    
+        // Получаем компоненты времени
+        const hours = String(date.getHours()).padStart(2, '0'); // Часы (с ведущим нулем)
+        const minutes = String(date.getMinutes()).padStart(2, '0'); // Минуты (с ведущим нулем)
+        const seconds = String(date.getSeconds()).padStart(2, '0'); // Секунды (с ведущим нулем)
+    
+        // Формируем строку в требуемом формате
+        return `Дата: ${day} ${month} ${year} — это ${dayOfWeek}.\nВремя: ${hours}:${minutes}:${seconds}`;
+    }
+    
+    // Пример использования
+    const exampleDate = new Date(); // Текущая дата и время
+    console.log(formatDate(exampleDate));
+}
+
