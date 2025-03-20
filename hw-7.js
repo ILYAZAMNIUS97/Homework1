@@ -59,22 +59,9 @@
 // Задание 5
 {
     function getRandomNumberA() {
-        // Генерируем случайное число от 0 (включительно) до 1 (не включительно)
-        const randomFractionA = Math.random();
-
-        // Умножаем на 10, чтобы получить число от 0 (включительно) до 10 (не включительно)
-        const randomNumberA = randomFractionA * 10;
-
-        // Округляем вниз до ближайшего целого числа
-        const randomIntegerA = Math.floor(randomNumberA);
-
-        // Добавляем 1, чтобы получить число от 1 до 10
-        const resultB = randomIntegerA + 1;
-
-        // Выводим результат в консоль
-        console.log(resultB);
+        console.log(Math.floor(Math.random() * 10) + 1);
     }
-
+    
     // Пример использования:
     getRandomNumberA(); // Выведет случайное число от 1 до 10
 }
