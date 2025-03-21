@@ -1,7 +1,7 @@
 // Игра "Камень, ножницы, бумага"
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     // Добавляем обработчик события клика на кнопку
-    document.querySelector('#game5 .card__button').addEventListener('click', function() {
+    document.querySelector('#game5 .card__button').addEventListener('click', () => {
         // Массив с возможными вариантами
         const choices = ["камень", "ножницы", "бумага"];
         
@@ -21,16 +21,16 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Определяем победителя и выводим результат
         let result = "Ничья!";
-        if (userChoice === computerChoice) {
-            // Результат остается "Ничья!"
-        } else if (
-            (userChoice === "камень" && computerChoice === "ножницы") ||
-            (userChoice === "ножницы" && computerChoice === "бумага") ||
-            (userChoice === "бумага" && computerChoice === "камень")
-        ) {
-            result = "Вы победили!";
-        } else {
-            result = "Компьютер победил!";
+        if (userChoice !== computerChoice) {
+            if (
+                (userChoice === "камень" && computerChoice === "ножницы") ||
+                (userChoice === "ножницы" && computerChoice === "бумага") ||
+                (userChoice === "бумага" && computerChoice === "камень")
+            ) {
+                result = "Вы победили!";
+            } else {
+                result = "Компьютер победил!";
+            }
         }
         
         // Выводим результат
