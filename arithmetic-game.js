@@ -47,6 +47,13 @@ function calculateAnswer({ num1, num2, operator }) {
     }
 }
 
+// Функция для проверки, является ли введенное значение числом
+function isNumericInput(input) {
+    // Проверяем, что ввод - это число, учитывая возможность десятичных дробей
+    // Регулярное выражение соответствует числам с точкой или без
+    return /^-?\d*\.?\d*$/.test(input);
+}
+
 // Основная функция игры
 function startArithmeticGame() {
     const problem = generateArithmeticProblem();
@@ -54,12 +61,31 @@ function startArithmeticGame() {
     const problemText = `${num1} ${operator} ${num2}`;
     const correctAnswer = calculateAnswer(problem);
     
-    // Запрашиваем ответ у пользователя
-    const userInput = prompt(`Решите задачу: ${problemText}`);
+    // Запрашиваем ответ у пользователя с указанием, что нужно ввести число
+    let userInput;
+    let validInput = false;
     
-    // Проверка на отмену или пустой ввод
-    if (userInput === null || userInput.trim() === '') {
-        return;
+    while (!validInput) {
+        userInput = prompt(`Решите задачу: ${problemText}\n\nВведите только число (используйте точку для десятичных дробей)`);
+        
+        // Проверка на отмену
+        if (userInput === null) {
+            return;
+        }
+        
+        // Проверка на пустой ввод
+        if (userInput.trim() === '') {
+            alert('Пожалуйста, введите число.');
+            continue;
+        }
+        
+        // Проверка на числовой ввод
+        if (!isNumericInput(userInput)) {
+            alert('Пожалуйста, вводите только числа.');
+            continue;
+        }
+        
+        validInput = true;
     }
     
     const userAnswer = parseFloat(userInput);
