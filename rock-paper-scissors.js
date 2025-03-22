@@ -1,25 +1,20 @@
 // Игра "Камень, ножницы, бумага"
 document.addEventListener('DOMContentLoaded', () => {
-    // Добавляем обработчик события клика на кнопку
+    
     document.querySelector('#game5 .card__button').addEventListener('click', () => {
-        // Массив с возможными вариантами
+        
         const choices = ["камень", "ножницы", "бумага"];
         
-        // Получаем выбор пользователя через prompt()
         let userChoice = prompt("Выберите: камень, ножницы или бумага").toLowerCase().trim();
         
-        // Проверяем корректность ввода пользователя
         while (!choices.includes(userChoice)) {
             userChoice = prompt("Пожалуйста, введите корректный выбор: камень, ножницы или бумага").toLowerCase().trim();
-            
-            // Если пользователь нажал "Отмена", прекращаем игру
+               
             if (userChoice === null) return;
         }
         
-        // Генерируем случайный выбор компьютера
         const computerChoice = choices[Math.floor(Math.random() * choices.length)];
         
-        // Определяем победителя и выводим результат
         let result = "Ничья!";
         if (userChoice !== computerChoice) {
             if (
@@ -33,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         
-        // Выводим результат
         alert(`Ваш выбор: ${userChoice}\nВыбор компьютера: ${computerChoice}\n\n${result}`);
     });
 });
