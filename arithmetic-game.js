@@ -1,14 +1,12 @@
 // arithmetic-game.js
+
 // Функция для генерации случайного числа в заданном диапазоне
-function getRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 // Функция для генерации случайной арифметической задачи
-function generateArithmeticProblem() {
+const generateArithmeticProblem = () => {
     const operators = ['+', '-', '*', '/'];
-    const operatorIndex = getRandomNumber(0, operators.length - 1);
-    const operator = operators[operatorIndex];
+    const operator = operators[getRandomNumber(0, operators.length - 1)];
     
     let num1, num2;
     
@@ -28,16 +26,15 @@ function generateArithmeticProblem() {
             break;
         case '/':
             num2 = getRandomNumber(2, 10); // Делитель
-            const multiplier = getRandomNumber(1, 10);
-            num1 = num2 * multiplier; // Гарантия целочисленного результата
+            num1 = num2 * getRandomNumber(1, 10); // Гарантия целочисленного результата
             break;
     }
     
     return { num1, num2, operator };
-}
+};
 
 // Функция для вычисления правильного ответа
-function calculateAnswer({ num1, num2, operator }) {
+const calculateAnswer = ({ num1, num2, operator }) => {
     switch (operator) {
         case '+': return num1 + num2;
         case '-': return num1 - num2;
@@ -45,21 +42,42 @@ function calculateAnswer({ num1, num2, operator }) {
         case '/': return num1 / num2;
         default: return null;
     }
-}
+};
+
+// Функция для проверки, является ли введенное значение числом
+const isNumericInput = input => /^-?\d*\.?\d*$/.test(input);
 
 // Основная функция игры
-function startArithmeticGame() {
-    const problem = generateArithmeticProblem();
-    const { num1, num2, operator } = problem;
+const startArithmeticGame = () => {
+    const { num1, num2, operator } = generateArithmeticProblem();
     const problemText = `${num1} ${operator} ${num2}`;
-    const correctAnswer = calculateAnswer(problem);
+    const correctAnswer = calculateAnswer({ num1, num2, operator });
     
-    // Запрашиваем ответ у пользователя
-    const userInput = prompt(`Решите задачу: ${problemText}`);
+    let userInput;
+    let validInput = false;
     
-    // Проверка на отмену или пустой ввод
-    if (userInput === null || userInput.trim() === '') {
-        return;
+    while (!validInput) {
+        userInput = prompt(`Решите задачу: ${problemText}\n\nВведите только число (используйте точку для десятичных дробей)`);
+        
+        // Проверка на отмену
+        if (userInput === null) {
+            alert('Игра отменена');
+            return;
+        }
+        
+        // Проверка на пустой ввод
+        if (userInput.trim() === '') {
+            alert('Пожалуйста, введите число.');
+            continue;
+        }
+        
+        // Проверка на числовой ввод
+        if (!isNumericInput(userInput)) {
+            alert('Пожалуйста, вводите только числа.');
+            continue;
+        }
+        
+        validInput = true;
     }
     
     const userAnswer = parseFloat(userInput);
@@ -70,7 +88,7 @@ function startArithmeticGame() {
     } else {
         alert(`Неправильно. Правильный ответ: ${correctAnswer}`);
     }
-}
+};
 
 // Запуск игры при нажатии на кнопку "Играть"
 document.addEventListener('DOMContentLoaded', () => {
