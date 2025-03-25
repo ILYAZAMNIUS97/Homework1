@@ -5,12 +5,24 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const choices = ["камень", "ножницы", "бумага"];
         
-        let userChoice = prompt("Выберите: камень, ножницы или бумага").toLowerCase().trim();
+        let userChoice = prompt("Выберите: камень, ножницы или бумага");
+        
+        if (userChoice === null) {
+            alert("Игра отменена");
+            return;
+        }
+        
+        userChoice = userChoice.toLowerCase().trim();
         
         while (!choices.includes(userChoice)) {
-            userChoice = prompt("Пожалуйста, введите корректный выбор: камень, ножницы или бумага").toLowerCase().trim();
-               
-            if (userChoice === null) return;
+            userChoice = prompt("Пожалуйста, введите корректный выбор: камень, ножницы или бумага");
+            
+            if (userChoice === null) {
+                alert("Игра отменена");
+                return;
+            }
+            
+            userChoice = userChoice.toLowerCase().trim();
         }
         
         const computerChoice = choices[Math.floor(Math.random() * choices.length)];
