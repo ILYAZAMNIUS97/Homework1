@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Манипуляции</title>
+    <style>
+        .hidden { display: none; }
+        .blue-text { color: #0066cc; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="mainHeader">Домашнее задание DOM</h1>
+        <button id="toggleBtn">Скрыть заголовок</button>
+        <button id="changeTextBtn">Изменить текст</button>
+        <nav>
+            <ul>
+                <li><a href="#section1">Меню 1</a></li>
+                <li><a href="#section2">Меню 2</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="section1">
+            <h2>Подзаголовок 1</h2>
+            <p id="textParagraph">Это текстовый блок с <strong>важной информацией</strong>.</p>
+            <button id="colorBtn">Изменить цвет текста</button>
+        </section>
+
+        <section id="section2">
+            <h2>Подзаголовок 2</h2>
+            <p>Еще один текстовый блок.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Ваше имя/компания</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Получаем все элементы
+            const elements = {
+                header: document.querySelector('#mainHeader'),
+                toggleBtn: document.querySelector('#toggleBtn'),
+                changeTextBtn: document.querySelector('#changeTextBtn'),
+                paragraph: document.querySelector('#textParagraph'),
+                colorBtn: document.querySelector('#colorBtn')
+            };
+
+            // Тексты для переключения
+            const headerTexts = [
+                "Домашнее задание DOM",
+                "Привет, мир!"
+            ];
+            let currentTextIndex = 0;
+
+            // Обработчики событий
+            const toggleHeader = () => {
+                elements.header.classList.toggle('hidden');
+                elements.toggleBtn.textContent = elements.header.classList.contains('hidden') 
+                    ? 'Показать заголовок' 
+                    : 'Скрыть заголовок';
+            };
+
+            const changeTextColor = () => {
+                elements.paragraph.classList.toggle('blue-text');
+            };
+
+            const toggleHeaderText = () => {
+                currentTextIndex = (currentTextIndex + 1) % headerTexts.length;
+                elements.header.textContent = headerTexts[currentTextIndex];
+            };
+
+            // Назначаем обработчики
+            elements.toggleBtn.addEventListener('click', toggleHeader);
+            elements.colorBtn.addEventListener('click', changeTextColor);
+            elements.changeTextBtn.addEventListener('click', toggleHeaderText);
+        });
+    </script>
+</body>
+</html>
