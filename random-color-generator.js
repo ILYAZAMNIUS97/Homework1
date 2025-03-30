@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const originalColor = 'rgb(32, 32, 39)';
         
-        // Создаем и добавляем информационную панель
         const colorInfo = Object.assign(document.createElement('div'), {
             style: `
                 position: fixed;
@@ -22,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         document.body.appendChild(colorInfo);
 
-        // Основная логика игры
         const startColorGame = () => {
             const getRandomColor = () => 
                 `rgb(${[1,1,1].map(() => Math.floor(Math.random() * 256)).join(',')})`;
